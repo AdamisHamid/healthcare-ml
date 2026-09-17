@@ -10,7 +10,7 @@ Mean squared error over $n$ data points:
 
 $$J(b_0, b_1) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2 = \frac{1}{n}\sum_{i=1}^{n}\left(y_i - (b_0 + b_1 x_i)\right)^2$$
 
-## Deriving ∂J/∂b₀
+## Deriving $\frac{\partial J(b_0, b_1)}{\partial b_0}$
 
 Let $u_i = y_i - (b_0 + b_1 x_i)$, so each term in the sum is $u_i^2$.
 
@@ -28,9 +28,9 @@ $$\frac{\partial}{\partial b_0}(u_i^2) = 2u_i \cdot (-1) = -2\left(y_i - (b_0 + 
 
 Sum over all $n$ points and divide by $n$:
 
-$$\frac{\partial J}{\partial b_0} = -\frac{2}{n}\sum_{i=1}^{n}\left(y_i - (b_0 + b_1 x_i)\right)$$
+$$\frac{\partial J(b_0, b_1)}{\partial b_0} = -\frac{2}{n}\sum_{i=1}^{n}\left(y_i - (b_0 + b_1 x_i)\right)$$
 
-## Deriving ∂J/∂b₁
+## Deriving $\frac{\partial J(b_0, b_1)}{\partial b_1}$
 
 Same setup, but differentiate the inner function with respect to $b_1$ instead:
 
@@ -42,15 +42,15 @@ $$\frac{\partial}{\partial b_1}(u_i^2) = 2u_i \cdot (-x_i) = -2x_i\left(y_i - (b
 
 Sum and divide by $n$:
 
-$$\frac{\partial J}{\partial b_1} = -\frac{2}{n}\sum_{i=1}^{n} x_i\left(y_i - (b_0 + b_1 x_i)\right)$$
+$$\frac{\partial J(b_0, b_1)}{\partial b_1} = -\frac{2}{n}\sum_{i=1}^{n} x_i\left(y_i - (b_0 + b_1 x_i)\right)$$
 
 ## Gradient Descent Update Rule
 
 Using a learning rate $\alpha$, at each epoch:
 
-$$b_0 \leftarrow b_0 - \alpha \frac{\partial J}{\partial b_0}$$
+$$b_0 \leftarrow b_0 - \alpha \frac{\partial J(b_0, b_1)}{\partial b_0}$$
 
-$$b_1 \leftarrow b_1 - \alpha \frac{\partial J}{\partial b_1}$$
+$$b_1 \leftarrow b_1 - \alpha \frac{\partial J(b_0, b_1)}{\partial b_1}$$
 
 ## Implementation Notes
 
