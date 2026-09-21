@@ -75,7 +75,7 @@ $$\hat{y}_i = \sigma(z_i) = \frac{1}{1+e^{-z_i}}$$
 
 Cross-entropy loss over $n$ data points:
 
-$$J(b_0, b_1) = -\frac{1}{n}\sum_{i=1}^{n}\left[y_i \ln(\hat{y}_i) + (1-y_i)\ln(1-\hat{y}_i)\right]$$
+$$J(b_0, b_1) = -\frac{1}{n}\sum_{i=1}^{n}\left[y_i \log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)\right]$$
 
 ### The Sigmoid Derivative
 
@@ -97,7 +97,7 @@ $$\frac{\partial \hat{y}_i}{\partial z_i} = \hat{y}_i(1-\hat{y}_i)$$
 
 ### Deriving $\frac{\partial J}{\partial \hat{y}_i}$
 
-Let $u_i = y_i \ln(\hat{y}_i) + (1-y_i)\ln(1-\hat{y}_i)$, so $J = -\frac{1}{n}\sum_{i=1}^n u_i$.
+Let $u_i = y_i \log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)$, so $J = -\frac{1}{n}\sum_{i=1}^n u_i$.
 
 Differentiating $u_i$ with respect to $\hat{y}_i$:
 
